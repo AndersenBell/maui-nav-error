@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp5.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp5"
+    FlyoutBehavior="Locked"
+    Title="MauiApp5"
+    NavBarIsVisible="True"
+    TabBarIsVisible="False">
+
+    <FlyoutItem  IsVisible="{Binding IsLoggedIn}" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Route="home"
+                  Title="Home"
+                  Icon="rectangle.png"
+                  ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+    <FlyoutItem  IsVisible="{Binding IsLoggedIn}"  IsEnabled ="{Binding IsNotLoggedIn}" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Route="home1"
+                  IsEnabled ="false"
+                  Title="Home 1"
+                  Icon="rectangle.png"
+                  ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+    <FlyoutItem  IsVisible="{Binding IsLoggedIn}" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Route="home2"
+                  Title="Home 2"
+                  Icon="rectangle.png"
+                  ContentTemplate="{DataTemplate local:MainPage}" />
+        <ShellContent Route="home3"
+                  Title="Home 3"
+                  Icon="rectangle.png"
+                  ContentTemplate="{DataTemplate local:MainPage}" />
+        <ShellContent Route="home4"
+                  Title="Home 4"
+                  Icon="rectangle.png"
+                  ContentTemplate="{DataTemplate local:MainPage}" />
+        <ShellContent Route="home5"
+                  Title="Home 5"
+                  Icon="rectangle.png"
+                  ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+    <FlyoutItem  IsVisible="{Binding IsNotLoggedIn}"
+            FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Route="home7"
+                  Title="Home 7"
+                  Icon="rectangle.png"
+                  ContentTemplate="{DataTemplate local:MainPage}" />
+        <ShellContent Route="home8"
+                  Title="Home 8"
+                  Icon="rectangle.png"
+                  ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+
+</Shell>
